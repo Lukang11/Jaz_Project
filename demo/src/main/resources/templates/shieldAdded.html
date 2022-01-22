@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windshield add to DB</title>
+</head>
+<body>
+<form action="#" th:action="@{/formcompl}" th:object="${windshield}" method="post">
+    <table border="1">
+        <tr>
+            <td><label>Id</label></td>
+            <td><input type="number" th:field="*{id}"/></td>
+        </tr>
+        <tr>
+            <td><label>eurocode</label></td>
+            <td><input type="text" th:field="*{eurocode}"/> </td>
+        </tr>
+        <tr>
+            <td><label>brand</label></td>
+            <td><input type="text" th:field="*{brand}"/></td>
+        </tr>
+        <tr>
+            <td><label>model</label></td>
+            <td><input type="text" th:field="*{model}"/></td>
+        </tr>
+        <tr>
+            <td><label>belt_color</label></td>
+            <td><input type="text" th:field="*{beltColor}"/></td>
+        </tr>
+
+        <tr>
+            <td><label>price</label></td>
+            <td><input type="number"step="0.01" min="0"  th:field="*{price}"/></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Send"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
