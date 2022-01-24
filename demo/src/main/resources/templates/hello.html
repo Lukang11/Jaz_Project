@@ -27,9 +27,20 @@
         li a:hover {
             background-color: #111;
         }
+        h1{
+            color: azure;
+            text-align: center;
+            font-weight: bold;
+        }
+        a{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
     </style>
 </head>
-<body>
+<body style="background-color: #242424">
 
     <ul>
         <li><a href="/search">Search</a></li>
@@ -37,5 +48,10 @@
         <li><a href="/all">All</a></li>
         <li><a href="/home">Home</a></li>
     </ul>
+
+<h1>Welcome in our warehouse</h1>
+    <a href="/all">
+        <img src="../static/warehouse.jpg" width="800" height="800" th:src="@{/warehouse.jpg}"/>
+    </a>
 </body>
 </html>

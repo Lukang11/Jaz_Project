@@ -38,7 +38,7 @@ public class ShieldViewController {
     public String submitShieldAddForm(@ModelAttribute WindshieldEntity windshield,Model model){
         shieldService.save(windshield);
         model.addAttribute("windshield",new WindshieldEntity());
-        return "shieldAdded";
+        return "shieldAddedComplete";
     }
     @GetMapping("/search")
     public String showSearchForm(@ModelAttribute  WindshieldEntity windshieldEntity, Model model){
