@@ -5,7 +5,9 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -33,6 +35,11 @@ public class ShieldService {
     }
     public List<WindshieldEntity> getShieldFromRepo(){
         return shieldRepository.findAll();
+    }
+    public List<WindshieldEntity> returnListOfSearchedShield(String brand){
+        return shieldRepository.findAll().stream()
+                .filter(x->x.getBrand().equalsIgnoreCase(brand))
+                .collect(Collectors.toList());
     }
 
     @EventListener(ApplicationReadyEvent.class)

@@ -35,13 +35,34 @@
     <li><a href="/all">All</a></li>
     <li><a href="/home">Home</a></li>
 </ul>
-<form action="#" th:action="@{/search}" th:object="${windshield}" method="post">
-    <table bgcolor="#333">
-        <tr>
-            <td><span style="color:azure">Enter brand :</span></td>
-            <td><input type="text" th:field="*{brand}"/></td><td><input type="submit" value="Search" /></td>
-        </tr>
-    </table>
-</form>
+
+<tbody>
+<br>
+<table>
+    <thead>
+    <th scope="col">#</th>
+    <th scope="col">Shield Id</th>
+    <th scope="col">Eurocode</th>
+    <th scope="col">Brand</th>
+    <th scope="col">Model</th>
+    <th scope="col">Belt Color</th>
+    <th scope="col">Price</th>
+    </thead>
+    <tr th:each="c: ${windshield}">
+        <td></td>
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.eurocode}"></td>
+        <td th:text="${c.brand}"></td>
+        <td th:text="${c.model}"></td>
+        <td th:text="${c.beltColor}"></td>
+        <td th:text="${c.price}"></td>
+        <br>
+    </tr>
+</table>
+
+<br>
+</tbody>
+</table>
+
 </body>
 </html>
