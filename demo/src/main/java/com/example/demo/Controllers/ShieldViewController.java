@@ -55,4 +55,12 @@ public class ShieldViewController {
         model.addAttribute("windshield", shieldService.returnListOfSearchedShield(windshieldEntity.getBrand()));
         return "shields";
     }
+    @PostMapping("/searchWithModel")
+    public String showSearchedWithModelList(@ModelAttribute  WindshieldEntity windshieldEntity, Model model){
+        model.addAttribute("windshield", shieldService.returnListOfSearchedShield(
+                windshieldEntity.getBrand(),
+                windshieldEntity.getModel()));
+        return "shields";
+    }
+
 }

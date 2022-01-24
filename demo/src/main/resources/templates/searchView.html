@@ -46,5 +46,19 @@
         </tr>
     </table>
 </form>
+<br>
+<form action="#" th:action="@{/searchWithModel}" th:object="${windshield}" method="post">
+    <table bgcolor="#333">
+        <tr>
+            <td><span style="color:azure">Enter brand :</span></td>
+            <td><input type="text" th:field="*{brand}"/></td><td></td>
+        </tr>
+        <tr>
+            <td><span style="color:azure">Enter model :</span></td>
+            <td><input type="text" th:field="*{model}"/></td><td><input type="submit" value="Search" /></td>
+        </tr>
+    </table>
+</form>
+
 </body>
 </html>

@@ -41,6 +41,13 @@ public class ShieldService {
                 .filter(x->x.getBrand().equalsIgnoreCase(brand))
                 .collect(Collectors.toList());
     }
+    public List<WindshieldEntity> returnListOfSearchedShield(String brand,String model){
+        return shieldRepository.findAll().stream()
+                .filter(x->x.getBrand().equalsIgnoreCase(brand))
+                .filter(x->x.getModel().equalsIgnoreCase(model))
+                .collect(Collectors.toList());
+    }
+
 
     @EventListener(ApplicationReadyEvent.class)
     public void fillDB(){
