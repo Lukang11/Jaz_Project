@@ -4,6 +4,8 @@ package com.example.demo.Controllers;
 import com.example.demo.Contracts.WindshieldEntity;
 import com.example.demo.Service.ShieldService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +42,12 @@ public class ShieldController {
     public void addShieldToDB(@RequestBody WindshieldEntity windshieldEntity){
         shieldService.save(windshieldEntity);
     }
-
+    @GetMapping("/shield/delete/{id}")
+    public ResponseEntity<String> id(@PathVariable String id){
+        if (shieldService.findById(id)==null){
+            return new ResponseEntity<>("Unfortunatly we couldn't find windshield with that id", HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>("We have succsefully delted user ",HttpStatus.OK);
+    }
 }
 

@@ -30,7 +30,6 @@ public class ShieldService {
        return shieldRepository.save(windshieldEntity);
     }
     public void deleteById(String id){
-
         shieldRepository.deleteById(Integer.parseInt(id));
     }
     public List<WindshieldEntity> getShieldFromRepo(){
